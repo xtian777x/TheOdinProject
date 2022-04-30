@@ -28,6 +28,18 @@ btn.onclick = () => alert("Hello Dying World");
 
 const btn2 = document.querySelector("#btn2");
 
-btn2.addEventListener('click',(e)=>{
+btn2.addEventListener('mouseenter',(e)=>{
 	e.target.style.background = 'blue';
+});
+
+btn2.addEventListener('mouseleave',(e)=>{
+	e.target.style.background = 'red';
+});
+
+const buttons = document.querySelectorAll('#container2 > button');
+
+buttons.forEach((button) => {
+	button.addEventListener('click', () => {
+		alert(button.id);
+	});
 });
