@@ -1,0 +1,25 @@
+body{
+	display: flex;
+	justify-content: center;
+}
+
+.container{
+	display: flex;
+	/*justify-content: space-around;*/
+	flex-direction: column;
+	border: 1px solid red;
+	align-items:  center;
+	width: 960px;
+	height: 960px;
+}
+
+.row{
+	display: flex;
+	width: 960px;
+}
+
+.pixel{
+	border: 1px solid gray;
+	flex: 1 1 0%;
+	height: 20px;
+}
