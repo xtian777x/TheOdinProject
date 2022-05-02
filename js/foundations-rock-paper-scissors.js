@@ -48,4 +48,36 @@ function game(){
 
 }
 
-game();
+function playRound2(){
+	if(playingQ){
+		const playerSelection = this.getAttribute("data-weapon");
+		const computerSelection = computerPlay();
+		const result = playRound(playerSelection,computerSelection);
+		const resultsContainer = document.querySelector('#results-container');
+		const resultItem = document.createElement('div');
+
+		resultItem.classList.add("result");
+		resultItem.textContent = result;
+
+		resultsContainer.appendChild(resultItem);
+		nRounds++;
+		if(nRounds===5){playingQ=false};
+	}else{
+		const outcomeContainer = document.querySelector('#outcome-container');
+		const outcome = document.createElement('div');
+
+		outcome.classList.add("result");
+		outcome.textContent = "GAME OVER";
+
+		outcomeContainer.appendChild(outcome);
+	}
+	
+}
+
+const buttons = document.querySelectorAll('.gameButton');
+
+buttons.forEach(btn => btn.addEventListener("click",playRound2));
+//game();
+
+let playingQ = true;
+let nRounds = 0;
